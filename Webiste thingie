@@ -1,0 +1,32 @@
+<html>
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+const games = [
+  { id: 1, name: "Space Explorer", description: "Explore the galaxy and collect rare artifacts." },
+  { id: 2, name: "Mystic Quest", description: "Embark on an epic journey through mystical lands." },
+  { id: 3, name: "Cyber Runner", description: "Dodge obstacles in a futuristic cyber world." }
+];
+
+export default function GameWebsite() {
+  return (
+    <div className="min-h-screen bg-gray-900 text-white p-6">
+      <h1 className="text-4xl font-bold text-center mb-6">Game Zone</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {games.map((game) => (
+          <motion.div key={game.id} whileHover={{ scale: 1.05 }}>
+            <Card className="bg-gray-800 shadow-lg rounded-2xl">
+              <CardContent className="p-4 text-center">
+                <h2 className="text-xl font-semibold">{game.name}</h2>
+                <p className="text-gray-400 mt-2">{game.description}</p>
+                <Button className="mt-4 bg-blue-600 hover:bg-blue-500">Play Now</Button>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+<html>
